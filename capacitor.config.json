@@ -1,0 +1,11 @@
+{
+  "appId": "com.kaipirastech.lucroml",
+  "appName": "KAIPIRA'S TECH Lucro ML",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}
