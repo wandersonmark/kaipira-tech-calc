@@ -1,4 +1,3 @@
-
 name: Gerar APK Capacitor - Lucro ML v1.4
 
 on:
@@ -26,13 +25,13 @@ jobs:
           else
             INDEX=$(find . -maxdepth 5 -type f -path '*/www/index.html' -print -quit)
             if [[ -z "$INDEX" ]]; then
-              echo 'ERRO: pasta www/index.html nao encontrada.'
+              echo 'ERRO: pasta www/index.html nao encontrada. Envie os arquivos extraidos do ZIP.'
               exit 1
             fi
             APP_DIR=$(dirname "$(dirname "$INDEX")")
           fi
           if [[ ! -f "$APP_DIR/package.json" || ! -f "$APP_DIR/capacitor.config.json" ]]; then
-            echo 'ERRO: arquivos de configuracao ausentes.'
+            echo 'ERRO: package.json ou capacitor.config.json ausente na pasta do app.'
             exit 1
           fi
           echo "APP_DIR=$APP_DIR" >> "$GITHUB_ENV"
